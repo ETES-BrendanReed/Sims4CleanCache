@@ -8,8 +8,10 @@ SET "notifyglob=C:\Users\%Username%\Documents\Electronic Arts\The Sims 4\notify.
 SET "sims4folder=C:\Users\%Username%\Documents\Electronic Arts\The Sims 4\"
 
 @REM Functions to check and delete files
-CALL :DeleteFiles "%localthumbcache%, %avatarcache%, %lastexception%, %lastcrash%, %notifyglob%,"
-
+CALL :DeleteFiles "%avatarcache%"
+CALL :DeleteFiles "%lastexception%"
+CALL :DeleteFiles "%lastcrash%"
+CALL :DeleteFiles "%notifyglob%"
 FOR %%F IN ("%sims4folder%\screenshots\*.png") DO CALL :CheckAndDeleteY/N "%%F" ELSE (
     ECHO No more screenshots found.
 )
